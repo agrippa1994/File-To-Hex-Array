@@ -29,6 +29,7 @@ int main(int argc, char *argv[]) {
 	std::fstream headerFile(header, std::ios_base::out);
 	if (!headerFile.is_open()) {
 		std::cerr << "Header file ist not writable" << std::endl;
+		return 1;
 	}
 
 

@@ -20,8 +20,7 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 
-	std::string content((std::istreambuf_iterator<char>(input)),
-		(std::istreambuf_iterator<char>()));
+	std::string content((std::istreambuf_iterator<char>(input)), (std::istreambuf_iterator<char>()));
 	if (content.length() == 0) {
 		std::cerr << "Input file has no data" << std::endl;
 		return 1;
@@ -41,12 +40,11 @@ int main(int argc, char *argv[]) {
 			if (i % 10 == 0)
 				headerFile << std::endl << "\t";
 
-			headerFile << "0x" << std::hex << (unsigned int)(*it);
+			headerFile << "0x" << std::hex << (((unsigned int)(*it)) & 0xff);
 			if (std::next(it) != content.end())
 				headerFile << ",";
 		}
 	}
 	headerFile << std::endl << "};" << std::endl;
-    return 0;
+	return 0;
 }
-

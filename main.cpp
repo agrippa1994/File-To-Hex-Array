@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
 
 
 	headerFile << "#pragma once" << std::endl << std::endl;
-	headerFile << "unsigned char[] " << var << " = {";
+	headerFile << " const unsigned char " << var << "[] = {";
 	{
 		int i = 0;
 		for (auto it = content.begin(); it != content.end(); it++, i++) {
